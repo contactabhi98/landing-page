@@ -1,0 +1,277 @@
+<section class="hero-section">
+    <nav class="nav-container-outer">
+        <div class="p-d-flex p-jc-between p-ai-center nav-container">
+            <div class="brand-name-container">
+                <span class="brand-name">Brandname</span>
+            </div>
+            <div class="menu-list-container">
+                <ul class="p-m-0 p-list-unstyled p-d-flex menu-list">
+                    <li class="p-mr-3 menu-item" *ngFor="let item of menuItems">{{ item }}</li>
+                </ul>
+            </div>
+            <div class="sign-in-or-join-container">
+                <span class="p-mr-2">
+                    <button pButton class="p-button-secondary login-button">
+                        <span>Login</span>
+                    </button>
+                </span>
+                <span>
+                    <button pButton class="p-button-success join-us-button">
+                        <span>Join Us</span><i class="fa fa-solid fa-arrow-right"></i>
+                    </button>
+                </span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="hero-cover-container">
+        <div class="hero-cover-inner-about">
+            <div class="welcome-text">Welcome</div>
+            <div class="welcome-info">
+                Our goal is to make online
+                <br>
+                education work for everyone
+            </div>
+            <div class="join-or-learn-conatainer">
+                <span class="p-mr-2">
+                    <button pButton type="button" label="Join Us" class="p-button-secondary login-button"></button>
+                </span>
+                <span>
+                    <button pButton type="button" label="Learn More" class="p-button-secondary learn-more"></button>
+                </span>
+            </div>
+            <div class="description">
+                Best Learning Opportunities
+            </div>
+        </div>
+        <div class="hero-cover-inner-image">
+            <img src="../../assets/icons_and_images/hero-cover-1.png" alt="">
+        </div>
+    </div>
+</section>
+
+<section class="about-us-section">
+    <div class="aboutus-container">
+        <div class="package-container">
+            <div class="line"></div>
+            <div class="about-package">
+                Approdable Packages
+            </div>
+            <div class="package-details">
+                Problems trying to resolve the conflict between
+                <br>
+                the two major realms of Classical physics:
+                <br>
+                Newtonian mechanics
+            </div>
+            <div class="learn-more">
+                <span class="p-mr-2">
+                    <a href="" class="learnmore-button">Learn More <img
+                            src="../../assets/svg/greater-than-solid-green.svg" alt="SVG Icon">
+                    </a>
+                </span>
+            </div>
+        </div>
+        <div class="facility-container">
+            <div class="card-containers">
+                <p-card class="cards">
+                    <ng-template pTemplate="content">
+                        <div class="logo">
+                            <img src="../../assets/icons_and_images/012-blackboards.svg" alt="">
+                        </div>
+                        <div class="details">
+                            Certified Teacher
+                        </div>
+                        <div class="line"></div>
+                        <div class="description">
+                            The gradual
+                            <br>
+                            accumulation of
+                            <br>
+                            information about
+                        </div>
+                    </ng-template>
+                </p-card>
+                <p-card class="cards">
+                    <ng-template pTemplate="content">
+                        <div class="logo">
+                            <img src="../../assets/icons_and_images/013-telescope-1.svg" alt="">
+                        </div>
+                        <div class="details">
+                            Expert instruction
+                        </div>
+                        <div class="line"></div>
+                        <div class="description">
+                            The gradual
+                            <br>
+                            accumulation of
+                            <br>
+                            information about
+                        </div>
+                    </ng-template>
+                </p-card>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="leadership-section">
+    <div class="ledadership-container">
+        <div class="leadership-info-inner-details">
+            <div class="leadership-title">
+                <span>Team</span>
+            </div>
+            <div class="leadership-info">
+                <span>Get Quality Education</span>
+            </div>
+            <div class="leadership-desc">
+                <span>
+                    Problems trying to resolve the conflict between
+                    <br>
+                    the two major realms of Classical physics: Newtonian mechanics
+                </span>
+            </div>
+        </div>
+        <div class="leadership-info-inner-cards-container">
+            <div class="cards-inner-container">
+                <p-carousel #carousel [value]="cards" [numVisible]="numVisibleCards" [numScroll]="numScrollCards" [circular]="true"
+                    [autoplayInterval]="3000">
+                    <ng-template let-card pTemplate="card">
+                        <div class="card">
+                            <img class="profile-image" [src]="card.img" alt="{{ card.name }}">
+                            <h3 class="profile-name">{{ card.name }}</h3>
+                            <p class="profile-profession">{{ card.profession }}</p>
+                            <div class="social-icons-container">
+                                <a class="social-image-inner">
+                                    <img class="social-image" src="../../assets/icons_and_images/facebook.svg" alt="">
+                                </a>
+                                <a class="social-image-inner">
+                                    <img class="social-image" src="../../assets/icons_and_images/instagram.svg" alt="">
+                                </a>
+                                <a class="social-image-inner">
+                                    <img class="social-image" src="../../assets/icons_and_images/twitter.svg" alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </ng-template>
+                </p-carousel>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="subscription-section">
+    <div class="subscription-container">
+        <div class="subscription-title">
+            Newsletter
+        </div>
+        <div class="about-tile">
+            <h3>Watch our Courses</h3>
+        </div>
+        <div class="description-title">
+            <p>
+                Problems trying to resolve the conflict between
+                <br>
+                the two major realms of Classical physics: Newtonian mechanics
+            </p>
+        </div>
+        <div class="subscription-form">
+            <form [formGroup]="form" (ngSubmit)="submitForm()">
+                <div class="form-input-container">
+                    <div class="input-wrapper">
+                        <input id="input" type="text" formControlName="email" placeholder="Your Email">
+                        <button pButton label="Subscribe" class="p-button-secondary subscribe" [disabled]="form.invalid"
+                            [class.disabled]="form.invalid">
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<section class="contact-us-section">
+    <div class="p-grid contact-us-container">
+        <div class="p-col contact-us-list-main contact-info">
+            <p-panel header="Contact Info">
+                <ul class="p-list-unstyled contact-info-lists">
+                    <li class="list-items">About</li>
+                    <li class="list-items">Career</li>
+                    <li class="list-items">We are hiring</li>
+                    <li class="list-items">Blog</li>
+                </ul>
+            </p-panel>
+        </div>
+        <div class="p-col contact-us-list-main contact-legal">
+            <p-panel header="Legal">
+                <ul class="p-list-unstyled contact-info-lists">
+                    <li class="list-items">About</li>
+                    <li class="list-items">Career</li>
+                    <li class="list-items">We are hiring</li>
+                    <li class="list-items">Blog</li>
+                </ul>
+            </p-panel>
+        </div>
+        <div class="p-col contact-us-list-main contact-features">
+            <p-panel header="Features">
+                <ul class="p-list-unstyled contact-info-lists">
+                    <li class="list-items">Business Marketing</li>
+                    <li class="list-items">User Analytic</li>
+                    <li class="list-items">Live Chat</li>
+                    <li class="list-items">Unlimited Support</li>
+                </ul>
+            </p-panel>
+        </div>
+        <div class="p-col contact-us-list-main contact-resources">
+            <p-panel header="Resources">
+                <ul class="p-list-unstyled contact-info-lists">
+                    <li class="list-items">IOS & Android</li>
+                    <li class="list-items">Watch a Demo</li>
+                    <li class="list-items">Customers</li>
+                    <li class="list-items">API</li>
+                </ul>
+            </p-panel>
+        </div>
+        <div class="p-col contact-us-list-main contact-getintouch">
+            <p-panel header="Get In Touch">
+                <ul class="p-list-unstyled contact-info-lists">
+                    <li class="list-items">
+                        <img src="../../assets/icons_and_images/contact.svg" alt="">
+                        <span class="list-text">
+                            (480) 555-0103
+                        </span>
+                    </li>
+                    <li class="list-items">
+                        <img src="../../assets/icons_and_images/location.svg" alt="">
+                        <span class="list-text">
+                            4517 Washington Ave.Manchester,
+                            <br>
+                            Kentucky 39495
+                        </span>
+                    </li>
+                    <li class="list-items">
+                        <img src="../../assets/icons_and_images/email.svg" alt="">
+                        <span class="list-text">debra.holt@example.com</span>
+                    </li>
+                </ul>
+            </p-panel>
+        </div>
+    </div>
+</section>
+
+<footer class="footer-main">
+    <div class="footer-container">
+        <div class="footer-copyright">
+            <p>
+                Made With Love By Figmaland All Right Reserved
+            </p>
+        </div>
+        <div class="footer-content">
+            <span class="social-icon"><a href=""><img src="../../assets/icons_and_images/facebook.svg"
+                        alt=""></a></span>
+            <span class="social-icon"><a href=""><img src="../../assets/icons_and_images/instagram.svg"
+                        alt=""></a></span>
+            <span class="social-icon"><a href=""><img src="../../assets/icons_and_images/twitter.svg" alt=""></a></span>
+        </div>
+    </div>
+</footer>
